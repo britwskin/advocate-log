@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Advocate Log Pro v2 - Part 4</title>
+<style>
+body{font-family:Arial;margin:0;background:#f4f6fa}
+.side{position:fixed;left:0;top:0;bottom:0;width:230px;background:#fff;border-right:1px solid #ddd;padding:16px}
+.main{margin-left:230px;padding:24px}
+.card{background:#fff;border:1px solid #ddd;border-radius:10px;padding:16px;margin-bottom:18px}
+.entry{border:1px solid #ddd;border-radius:8px;padding:12px;margin:10px 0}
+button{padding:8px 12px;margin:2px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#d33}
+</style>
+</head>
+<body>
+<div class="side">
+<h2>Patients</h2>
+<div><span class="dot"></span> John Smith</div>
+<div>Mary Jones</div>
+<hr>
+<button>Archive Patient</button>
+</div>
+
+<div class="main">
+
+<div class="card">
+<h2>Needs Logged in Solace</h2>
+
+<strong>John Smith</strong>
+<ul>
+<li>☐ Research Session</li>
+<li>☐ Provider Call</li>
+</ul>
+
+</div>
+
+<div class="card">
+<h2>Timeline</h2>
+
+<div class="entry">
+<b>Research Session</b><br>
+Research completed for wheelchair suppliers participating with UHC.<br><br>
+<button>📋 Copy Clinical Note</button>
+<button>✏ Edit</button>
+<button>🗑 Delete</button>
+<label style="float:right">
+<input type="checkbox"> Logged in Solace
+</label>
+</div>
+
+<div class="entry">
+<b>Provider Call</b><br>
+Called ABC DME. Waiting for return call.<br><br>
+<button>📋 Copy Clinical Note</button>
+<button>✏ Edit</button>
+<button>🗑 Delete</button>
+<label style="float:right">
+<input type="checkbox"> Logged in Solace
+</label>
+</div>
+
+</div>
+
+<div class="card">
+<h2>➕ Paste Anything</h2>
+
+<select>
+<option>John Smith</option>
+</select>
+
+<p><b>AI detects automatically:</b></p>
+
+<ul>
+<li>🎙 Transcript</li>
+<li>🔍 Research</li>
+<li>📧 Email</li>
+<li>📄 Notes</li>
+<li>💬 Message</li>
+</ul>
+
+<textarea style="width:100%;min-height:180px"
+placeholder="Paste anything here..."></textarea>
+
+<br><br>
+
+<button>✨ Process</button>
+
+</div>
+
+</div>
+</body>
+</html>

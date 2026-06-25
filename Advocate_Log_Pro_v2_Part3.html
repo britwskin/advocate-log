@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advocate Log Pro v2 - Part 3</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f4f6fa}
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:240px;background:#fff;border-right:1px solid #ddd;padding:18px}
+.main{margin-left:240px;padding:24px}
+.tabs button{margin-right:8px;padding:8px 12px}
+.card{background:#fff;border:1px solid #ddd;border-radius:10px;padding:16px;margin:18px 0}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #ddd;padding:8px}
+textarea{width:100%;min-height:180px}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h2>Advocate Log</h2>
+<p><strong>Patient:</strong> John Smith</p>
+</div>
+
+<div class="main">
+<h1>John Smith</h1>
+
+<div class="tabs">
+<button>📌 Before Next Call</button>
+<button>🕒 Timeline</button>
+<button>📋 Resource Tracker</button>
+<button>👩‍⚕️ Providers</button>
+<button>📄 Documents</button>
+<button>📝 Scratch Pad</button>
+</div>
+
+<div class="card">
+<h2>📌 Before Next Call</h2>
+<h4>Things I Need To Do</h4>
+<ul>
+<li>☐ Call wheelchair supplier</li>
+<li>☐ Verify Medicare coverage</li>
+</ul>
+
+<h4>Things I Need To Ask</h4>
+<ul>
+<li>☐ Did PT call?</li>
+<li>☐ Any medication changes?</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🕒 Timeline</h2>
+
+<div style="border:1px solid #ddd;padding:12px;border-radius:8px;margin-bottom:12px">
+<b>Research Session</b><br>
+Research completed for UHC wheelchair suppliers.<br><br>
+<button>📋 Copy Clinical Note</button>
+<button>✏️ Edit</button>
+<button>🗑 Delete</button>
+<label style="float:right"><input type="checkbox"> Logged in Solace</label>
+</div>
+
+</div>
+
+<div class="card">
+<h2>📋 Resource Tracker</h2>
+<table>
+<tr>
+<th>Organization</th>
+<th>Eligible</th>
+<th>Status</th>
+<th>Notes</th>
+<th>Logged</th>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><input type="checkbox"></td>
+</tr>
+</table>
+<br>
+<button>＋ Add Row</button>
+<button>Duplicate Row</button>
+</div>
+
+<div class="card">
+<h2>👩‍⚕️ Providers</h2>
+<button>＋ Add Provider</button>
+</div>
+
+<div class="card">
+<h2>📄 Documents</h2>
+<input type="file" multiple>
+</div>
+
+<div class="card">
+<h2>📝 Scratch Pad</h2>
+<textarea placeholder="Brain dump..."></textarea><br><br>
+<button>Convert to Timeline</button>
+<button>Convert to Clinical Note</button>
+<button>Convert to Task List</button>
+</div>
+
+</div>
+</body>
+</html>

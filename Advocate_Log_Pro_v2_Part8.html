@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Advocate Log Pro v2 - Part 8</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f5f7fb;margin:0}
+header{background:#2563eb;color:#fff;padding:16px}
+.wrap{padding:20px}
+.grid{display:grid;grid-template-columns:260px 1fr;gap:20px}
+.card{background:#fff;border:1px solid #ddd;border-radius:10px;padding:16px;margin-bottom:16px}
+.patient{padding:10px;border-radius:8px;cursor:pointer}
+.patient:hover{background:#eef4ff}
+.active{background:#dbeafe}
+.badge{display:inline-block;background:#dc2626;color:#fff;border-radius:10px;padding:2px 8px;font-size:12px}
+.tabs button{margin:4px;padding:8px 12px}
+textarea{width:100%;min-height:140px}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #ddd;padding:8px}
+</style>
+</head>
+<body>
+<header><h2>Advocate Log Pro v2 — Part 8</h2></header>
+
+<div class="wrap">
+<div class="grid">
+
+<div>
+<div class="card">
+<h3>Patients</h3>
+<div class="patient active">John Smith <span class="badge">2</span></div>
+<div class="patient">Mary Jones</div>
+<button>+ Add Patient</button>
+</div>
+
+<div class="card">
+<h3>Needs Logged in Solace</h3>
+<b>John Smith</b>
+<ul>
+<li>Research Session</li>
+<li>Provider Call</li>
+</ul>
+</div>
+</div>
+
+<div>
+
+<div class="card">
+<h2>John Smith</h2>
+<div class="tabs">
+<button>📌 Before Next Call</button>
+<button>🕒 Timeline</button>
+<button>📋 Resources</button>
+<button>👩‍⚕️ Providers</button>
+<button>📄 Documents</button>
+<button>📝 Scratch Pad</button>
+</div>
+</div>
+
+<div class="card">
+<h3>📌 Before Next Call</h3>
+<ul>
+<li>☐ Call ABC Mobility</li>
+<li>☐ Verify PA requirements</li>
+<li>☐ Ask if paperwork arrived</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🕒 Timeline</h3>
+<table>
+<tr><th>Date</th><th>Type</th><th>Logged</th><th>Actions</th></tr>
+<tr>
+<td>Today</td>
+<td>Research</td>
+<td>☐</td>
+<td>Copy • Edit • Delete</td>
+</tr>
+</table>
+</div>
+
+<div class="card">
+<h3>➕ Paste Anything</h3>
+<select><option>John Smith</option></select>
+<textarea placeholder="Paste transcript, research, email, notes..."></textarea>
+<br><br>
+<button>✨ Process</button>
+<button>📋 Copy Clinical Note</button>
+</div>
+
+</div>
+</div>
+</div>
+</body>
+</html>

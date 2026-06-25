@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Advocate Log Pro v2 - Part 6</title>
+<style>
+body{font-family:Arial;margin:0;padding:24px;background:#f4f6fa}
+.card{background:#fff;border:1px solid #ddd;border-radius:10px;padding:16px;margin-bottom:18px}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #ddd;padding:8px}
+input,select{padding:6px}
+button{padding:8px 12px;margin:3px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+</style>
+</head>
+<body>
+
+<div class="grid">
+
+<div class="card">
+<h2>📚 Master Resource Library</h2>
+
+<input placeholder="Search library...">
+<button>Search</button>
+<button>＋ Add Resource</button>
+
+<table>
+<tr><th>Organization</th><th>Category</th><th>Import</th></tr>
+<tr><td>American Cancer Society</td><td>Financial</td><td><button>Import</button></td></tr>
+<tr><td>Area Agency on Aging</td><td>Senior Services</td><td><button>Import</button></td></tr>
+</table>
+
+</div>
+
+<div class="card">
+<h2>📋 Resource Tracker</h2>
+
+<input placeholder="Search">
+<button>Filter</button>
+<button>Sort</button>
+<button>Duplicate Row</button>
+
+<table>
+<tr>
+<th>Organization</th>
+<th>Eligible</th>
+<th>Status</th>
+<th>Notes</th>
+<th>Logged</th>
+</tr>
+<tr>
+<td>ABC Mobility</td>
+<td>Yes</td>
+<td>Pending</td>
+<td>Needs prescription</td>
+<td><input type="checkbox"></td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h2>👩‍⚕️ Providers</h2>
+
+<button>＋ Add Provider</button>
+
+<table>
+<tr>
+<th>Name</th>
+<th>Specialty</th>
+<th>Phone</th>
+<th>Fax</th>
+<th>Email</th>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+<h2>📄 Documents</h2>
+
+<input type="file" multiple>
+
+<ul>
+<li>LOA.pdf</li>
+<li>Insurance Letter.pdf</li>
+<li>Monthly Report.docx</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h2>💬 Quick Phrase Manager</h2>
+
+<button>＋ Add Phrase</button>
+
+<ul>
+<li>Initial Intake</li>
+<li>Research Completed</li>
+<li>Provider Outreach</li>
+<li>Monthly Report</li>
+</ul>
+
+</div>
+
+<div class="card">
+<h2>🤖 AI Prompt Engine</h2>
+
+<p><strong>Role:</strong> Nurse Advocate</p>
+
+<label><input type="checkbox" checked> Concise clinical notes</label><br>
+<label><input type="checkbox" checked> Natural wording</label><br>
+<label><input type="checkbox" checked> Avoid repetition</label><br>
+<label><input type="checkbox" checked> Update Before Next Call</label><br>
+<label><input type="checkbox" checked> Extract tasks automatically</label><br>
+<label><input type="checkbox" checked> Generate Solace-ready documentation</label>
+
+</div>
+
+</div>
+
+<div class="card">
+<button>Archive Patient</button>
+<button>Restore Archived Patients</button>
+</div>
+
+</body>
+</html>
