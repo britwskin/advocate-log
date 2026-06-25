@@ -68,7 +68,7 @@
   .checklist li input[type=checkbox]{margin-top:2px;accent-color:var(--accent);width:15px;height:15px;flex-shrink:0;cursor:pointer;}
   .checklist li.done label{text-decoration:line-through;color:var(--text3);}
   .checklist li label{cursor:pointer;line-height:1.4;}
-  .log-entry{background:var(--surface2);border-radius:8px;padding:13px 15px;margin-bottom:10px;border-left:3px solid var(--border);position:relative;}
+  .log-entry{background:var(--surface2);border-radius:8px;padding:13px 15px;margin-bottom:10px;border-left:3px solid var(--border);}
   .log-entry.call{border-left-color:var(--accent);}
   .log-entry.visit{border-left-color:var(--accent2);}
   .log-entry.task{border-left-color:#9B6BBF;}
@@ -93,14 +93,15 @@
   .form-textarea{resize:vertical;min-height:80px;line-height:1.5;}
   .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);display:none;align-items:center;justify-content:center;z-index:1000;}
   .modal-overlay.open{display:flex;}
-  .modal{background:var(--surface);border-radius:12px;width:540px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:0 8px 40px rgba(0,0,0,.18);}
+  .modal{background:var(--surface);border-radius:12px;width:580px;max-width:98vw;max-height:92vh;overflow-y:auto;box-shadow:0 8px 40px rgba(0,0,0,.18);}
+  .modal-wide{width:820px;}
   .modal-header{padding:20px 24px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
   .modal-title{font-size:16px;font-weight:600;}
   .modal-close{background:none;border:none;cursor:pointer;font-size:20px;color:var(--text3);line-height:1;}
   .modal-body{padding:20px 24px;}
   .modal-footer{padding:14px 24px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:10px;}
-  .tabs{display:flex;gap:2px;background:var(--surface2);padding:3px;border-radius:8px;margin-bottom:20px;width:fit-content;}
-  .tab-btn{padding:7px 16px;border:none;background:none;border-radius:6px;cursor:pointer;font-size:13px;font-family:var(--sans);font-weight:500;color:var(--text2);transition:all .15s;}
+  .tabs{display:flex;gap:2px;background:var(--surface2);padding:3px;border-radius:8px;margin-bottom:20px;width:fit-content;flex-wrap:wrap;}
+  .tab-btn{padding:7px 14px;border:none;background:none;border-radius:6px;cursor:pointer;font-size:12px;font-family:var(--sans);font-weight:500;color:var(--text2);transition:all .15s;}
   .tab-btn.active{background:var(--surface);color:var(--text);box-shadow:var(--shadow);}
   .alert{padding:10px 14px;border-radius:7px;font-size:12px;margin-bottom:14px;display:flex;align-items:flex-start;gap:8px;}
   .alert-warn{background:var(--warn-light);color:var(--warn);border:1px solid #f0c0a0;}
@@ -124,24 +125,44 @@
   .day-cell .day-count{font-size:18px;font-weight:600;font-family:var(--mono);color:var(--text);}
   .day-cell.today{background:var(--accent-light);border:1px solid #b0d8ea;}
   .next-visit-banner{background:linear-gradient(135deg,#FEF6E4 0%,#FDF0EA 100%);border:1.5px solid #F0C87A;border-radius:9px;padding:13px 16px;margin-bottom:14px;}
-  .next-visit-banner .nvb-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#C98A20;margin-bottom:5px;display:flex;align-items:center;gap:5px;}
+  .next-visit-banner .nvb-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#C98A20;margin-bottom:5px;}
   .next-visit-banner .nvb-text{font-size:13px;color:#7A5010;line-height:1.5;white-space:pre-wrap;}
   .next-visit-banner .nvb-from{font-size:11px;color:#C98A20;margin-top:5px;font-family:var(--mono);}
-  /* Loading overlay */
+  /* Quick Phrases */
+  .phrase-cat-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);padding:8px 0 4px;border-top:1px solid var(--border);margin-top:6px;}
+  .phrase-cat-label:first-child{border-top:none;margin-top:0;}
+  .phrase-item{background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:10px 12px;margin-bottom:6px;cursor:pointer;transition:all .15s;}
+  .phrase-item:hover{border-color:var(--accent);background:var(--accent-light);}
+  .phrase-title{font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px;}
+  .phrase-preview{font-size:11px;color:var(--text3);line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .phrase-copied{font-size:11px;color:var(--accent2);font-weight:600;margin-top:3px;display:none;}
+  /* Resources table */
+  .resources-section{margin-bottom:20px;}
+  .resources-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+  .resources-table{width:100%;border-collapse:collapse;font-size:12px;}
+  .resources-table th{background:var(--surface2);padding:8px 10px;text-align:left;font-weight:600;font-size:11px;color:var(--text2);border:1px solid var(--border);white-space:nowrap;}
+  .resources-table td{padding:8px 10px;border:1px solid var(--border);vertical-align:top;color:var(--text);}
+  .resources-table td input,.resources-table td select,.resources-table td textarea{width:100%;border:none;background:transparent;font-size:12px;font-family:var(--sans);color:var(--text);outline:none;resize:none;padding:0;}
+  .resources-table td input:focus,.resources-table td select:focus,.resources-table td textarea:focus{background:var(--accent-light);border-radius:3px;padding:2px 4px;}
+  .resources-table tr:hover td{background:#FAFBFC;}
+  .eligible-yes{color:var(--accent2);font-weight:600;}
+  .eligible-no{color:var(--warn);font-weight:600;}
+  .eligible-pending{color:#C98A20;font-weight:600;}
+  .resource-group{margin-bottom:24px;}
+  .resource-group-header{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .resource-group-title{font-size:14px;font-weight:600;color:var(--text);}
+  /* Loading */
   #loading-screen{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;gap:14px;}
   #loading-screen .logo-big{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
-  #loading-screen h2{font-size:18px;font-weight:600;color:var(--text);}
+  #loading-screen h2{font-size:18px;font-weight:600;}
   #loading-screen p{font-size:13px;color:var(--text2);}
   #loading-screen .spinner{width:28px;height:28px;border-width:3px;}
   ::-webkit-scrollbar{width:6px;}
   ::-webkit-scrollbar-track{background:transparent;}
   ::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
-  ::-webkit-scrollbar-thumb:hover{background:var(--text3);}
 </style>
 </head>
 <body>
-
-<!-- Loading screen -->
 <div id="loading-screen">
   <div class="logo-big">Solace Health</div>
   <div class="spinner" style="border-color:var(--accent);border-top-color:transparent;"></div>
@@ -154,14 +175,12 @@
     <div class="sidebar-header">
       <div class="logo">Solace Health</div>
       <h1>Advocate Log</h1>
-      <div class="sync-status">
-        <div class="sync-dot" id="sync-dot"></div>
-        <span id="sync-label" style="color:var(--text3);font-size:10px;">Connecting...</span>
-      </div>
+      <div class="sync-status"><div class="sync-dot" id="sync-dot"></div><span id="sync-label" style="color:var(--text3);font-size:10px;">Connecting...</span></div>
     </div>
     <div class="sidebar-nav">
       <button class="nav-btn active" onclick="showView('dashboard')" id="nav-dashboard"><span>📊</span> Dashboard</button>
-      <button class="nav-btn" onclick="showView('compliance')" id="nav-compliance"><span>✅</span> Compliance Checklist</button>
+      <button class="nav-btn" onclick="showView('phrases')" id="nav-phrases"><span>💬</span> Quick Phrases</button>
+      <button class="nav-btn" onclick="showView('compliance')" id="nav-compliance"><span>✅</span> Compliance</button>
     </div>
     <div class="sidebar-patients">
       <div class="sidebar-label">Patients</div>
@@ -175,10 +194,7 @@
 <!-- Add Patient Modal -->
 <div class="modal-overlay" id="modal-patient">
   <div class="modal">
-    <div class="modal-header">
-      <div class="modal-title">Add New Patient</div>
-      <button class="modal-close" onclick="closeModal('modal-patient')">×</button>
-    </div>
+    <div class="modal-header"><div class="modal-title">Add New Patient</div><button class="modal-close" onclick="closeModal('modal-patient')">×</button></div>
     <div class="modal-body">
       <div class="grid-2">
         <div class="form-group"><label class="form-label">First Name / Initials *</label><input class="form-input" id="p-firstname" placeholder="e.g. J or Jane"></div>
@@ -187,32 +203,33 @@
       <div class="form-group"><label class="form-label">Insurance / Plan</label><input class="form-input" id="p-insurance" placeholder="e.g. BlueCross PPO"></div>
       <div class="form-group"><label class="form-label">Notes</label><textarea class="form-textarea" id="p-notes" placeholder="Key contacts, special considerations..."></textarea></div>
     </div>
-    <div class="modal-footer">
-      <button class="btn btn-secondary" onclick="closeModal('modal-patient')">Cancel</button>
-      <button class="btn btn-primary" onclick="savePatient()">Add Patient</button>
-    </div>
+    <div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal('modal-patient')">Cancel</button><button class="btn btn-primary" onclick="savePatient()">Add Patient</button></div>
   </div>
 </div>
 
 <!-- Log Entry Modal -->
 <div class="modal-overlay" id="modal-log">
   <div class="modal">
-    <div class="modal-header">
-      <div class="modal-title" id="modal-log-title">Log Entry</div>
-      <button class="modal-close" onclick="closeModal('modal-log')">×</button>
-    </div>
+    <div class="modal-header"><div class="modal-title" id="modal-log-title">Log Entry</div><button class="modal-close" onclick="closeModal('modal-log')">×</button></div>
     <div class="modal-body" id="modal-log-body"></div>
-    <div class="modal-footer">
-      <button class="btn btn-secondary" onclick="closeModal('modal-log')">Cancel</button>
-      <button class="btn btn-primary" id="modal-log-save">Save Entry</button>
-    </div>
+    <div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal('modal-log')">Cancel</button><button class="btn btn-primary" id="modal-log-save">Save Entry</button></div>
   </div>
 </div>
 
-<!-- Firebase SDK -->
+<!-- Add Resource Group Modal -->
+<div class="modal-overlay" id="modal-resgroup">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title">New Resource Tracker</div><button class="modal-close" onclick="closeModal('modal-resgroup')">×</button></div>
+    <div class="modal-body">
+      <div class="form-group"><label class="form-label">Tracker Name *</label><input class="form-input" id="rg-name" placeholder="e.g. Housing, Scooter, Financial Assistance, DME..."></div>
+    </div>
+    <div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal('modal-resgroup')">Cancel</button><button class="btn btn-primary" onclick="saveResourceGroup()">Create Tracker</button></div>
+  </div>
+</div>
+
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import { getFirestore, collection, doc, onSnapshot, setDoc, deleteDoc, query, orderBy } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getFirestore, collection, doc, onSnapshot, setDoc, deleteDoc, query, orderBy, getDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBhBQUr026VGduuQmy6UQEj1w2EmpGHFfY",
@@ -222,173 +239,207 @@ const firebaseConfig = {
   messagingSenderId: "811154363693",
   appId: "1:811154363693:web:3d17d3e95647ca3233afa4"
 };
-
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// ===================== SYNC STATUS =====================
-function setSyncStatus(status) {
-  const dot = document.getElementById('sync-dot');
-  const label = document.getElementById('sync-label');
-  dot.className = 'sync-dot ' + status;
-  label.textContent = status === 'synced' ? 'Synced' : status === 'syncing' ? 'Saving...' : status === 'error' ? 'Offline' : 'Connecting...';
+// ===================== QUICK PHRASES DATA =====================
+const PHRASES = [
+  { cat:'Documentation', title:'Intake Preparation & Transfer Review', text:'Comprehensive preparation for upcoming [transfer] intake visit with patient. Review included care plan and notes submitted by previous advocate(s), physician encounter note, and associated ICD-10 codes, as well as additional information available within the patient file.' },
+  { cat:'Documentation', title:'Care Plan Development & Submission', text:'Development & submission of comprehensive care plan addressing patient\'s current medical situation, Solace physician recommendations, patient stated needs & priorities, & relevant social determinants of health. Care plan establishes a baseline picture of patient status, identifies key areas for advocacy focus, & sets a framework for ongoing advocacy relationship.' },
+  { cat:'Documentation', title:'Care Team Contact Lookup & Filing', text:'Lookup, verification, and filing of contact information for the patient\'s current care team, including address, phone number, and fax. Contact information from internal system database cross-checked with provider websites as available in order to address discrepancies & prevent delays in establishing communication. Information now stored in the patient\'s file and available for future outreach as needed to facilitate effective care coordination.' },
+  { cat:'Documentation', title:'Visit Preparation & Session', text:'Preparation for upcoming advocate visit with patient, including brief review of patient file, open advocacy goals and action items, and key areas for follow up. Conducted scheduled visit with patient via phone/video call.' },
+  { cat:'Documentation', title:'Transcript Review & Task Capture', text:'Review of transcript from most recent call with patient to capture continuing and emerging advocacy priorities, relevant action steps, and key areas for follow up. Identified tasks and action items added to the patient\'s care timeline and linked to established advocacy goals where appropriate.' },
+  { cat:'Documentation', title:'Monthly Report Completion', text:'Completed and submitted monthly report in advance of end-of-month deadline. Report details advocacy actions taken over the past several weeks, emerging and ongoing advocacy priorities, and next steps / action items to be completed. Monthly report completion supports tracking of progress towards advocacy goals and streamlined care management.' },
+  { cat:'Documentation', title:'Initial Intake Visit', text:'Conducted initial intake visit with new patient. Gathered comprehensive health history, identified primary advocacy goals, confirmed active care team members, and reviewed current medications, diagnoses, and insurance coverage. Established rapport and outlined scope of advocacy services. Patient file updated accordingly.' },
+  { cat:'Documentation', title:'Medication List Review & Reconciliation', text:'Completed review and reconciliation of patient\'s current medication list. Cross-referenced prescriptions with documented diagnoses and insurance formulary to identify any coverage gaps, prior authorization requirements, or potential cost-saving alternatives. Findings documented in patient file and flagged for follow-up as appropriate.' },
+  { cat:'Documentation', title:'Provider Outreach Initiation', text:'Initiated outreach to patient\'s primary care physician / specialist on behalf of patient. Communicated patient\'s current advocacy needs, requested relevant records or documentation, and confirmed next steps for care coordination. Interaction documented and follow-up scheduled as needed.' },
+  { cat:'Documentation', title:'Care Team Communication & Gap Resolution', text:'Facilitated coordination between two or more members of patient\'s care team to address gap in communication or continuity of care. Summarized patient\'s current status and outstanding needs to relevant providers, documented responses, and identified next steps to resolve identified gap.' },
+  { cat:'Documentation', title:'Medical Records Request & Tracking', text:'Requested and tracked medical records on behalf of patient. Identified relevant records needed, submitted request to appropriate facility or provider, confirmed receipt, and stored documentation in patient file for use in ongoing advocacy efforts.' },
+  { cat:'Documentation', title:'Insurance Benefits Verification', text:'Conducted insurance benefits verification on behalf of patient. Confirmed active coverage, identified applicable deductibles, copays, and out-of-pocket maximums, and reviewed coverage for specific services relevant to patient\'s current advocacy goals. Findings documented and shared with patient.' },
+  { cat:'Documentation', title:'Financial Assistance Research', text:'Researched and identified financial assistance programs potentially available to patient based on diagnosis, income, and insurance status. Programs identified include [manufacturer copay assistance / nonprofit grants / state programs / hospital charity care]. Patient informed of options and next steps outlined for application process.' },
+  { cat:'Documentation', title:'Prior Authorization Request', text:'Initiated and tracked prior authorization request for [medication / procedure / equipment] on behalf of patient. Submitted required documentation to insurance, confirmed receipt, and established follow-up timeline. Status updated in patient file.' },
+  { cat:'Documentation', title:'Insurance Denial & Appeal', text:'Researched insurance denial received for [service / medication / procedure]. Reviewed denial rationale, identified grounds for appeal, and gathered supporting clinical documentation. Appeal drafted and submitted on patient\'s behalf. Follow-up timeline established and documented.' },
+  { cat:'Documentation', title:'DME Supplier Research & Order', text:'Researched and identified durable medical equipment (DME) supplier(s) able to fulfill patient\'s current equipment need. Verified insurance coverage for identified equipment, confirmed supplier participation in patient\'s plan, and initiated order / referral process. Status documented and follow-up scheduled.' },
+  { cat:'Documentation', title:'Community Resources Connection', text:'Identified and connected patient with relevant community resources to address social determinants of health impacting care. Resources researched include [transportation / meal delivery / housing assistance / caregiver support / prescription assistance]. Patient provided with contact information and guidance on next steps.' },
+  { cat:'Documentation', title:'Follow-Up Outreach to Organization', text:'Conducted follow-up outreach to [organization / provider / insurance] regarding previously submitted request. Confirmed current status, escalated as appropriate, and documented response. Updated patient file and adjusted follow-up timeline accordingly.' },
+  { cat:'Documentation', title:'Patient-Initiated Contact (Outside Visit)', text:'Documented patient-initiated contact outside of scheduled visit. Patient reached out via [phone / message] regarding [brief description]. Matter addressed in real time where possible; additional follow-up tasks identified and added to care timeline.' },
+  { cat:'Documentation', title:'End-of-Period Goal Review', text:'Conducted end-of-period review of open advocacy goals and action items for patient. Assessed progress toward established goals, identified completed items for closure, updated priorities based on patient\'s current status, and documented revised plan of action for upcoming advocacy period.' },
+  { cat:'Provider Communications', title:'Records Request (Standard)', text:'Letter of Authorization & Consent to Treatment forms attached. Requesting any available records to be faxed to (XXX)XXX-XXXX for addition to ________\'s file with Solace Health in order to facilitate effective care coordination. Any additional questions or requests may be directed to ________, ____ via call/text at (XXX)XXX-XXXX or emailed to _________@solace.health.\nThank you!' },
+  { cat:'Provider Communications', title:'Medication List Review Request', text:'Letter of Authorization & Consent to Treatment forms attached, including a list of all Rx/OTC/supplement medications, dosages, & times that _______ is currently taking. Please review and advise if any medication prescribed by your office appears incorrect. Patient also requests their medication list be updated in your system if any discrepancies exist. Any additional questions or requests may be directed to _________, ____ via call/text at (XXX)XXX-XXXX or emailed to ______@solace.health.\nThank you!' },
+  { cat:'Provider Communications', title:'Advocate Introduction & Records Request (Warm)', text:'*Letter of Authorization & Consent to Treatment forms attached*\nGood afternoon! I\'m an RN Care Advocate working remotely with _____ to help him/her navigate access to care via Solace, a healthcare advocacy organization. I\'m requesting any available records, especially in regards to ________________, to be faxed to (XXX)XXX-XXXX for addition to ________\'s file with Solace Health.\nI hope to be of service both to ______ and your office in helping him/her continue to safely access the vital care that s/he needs - please feel free to reach out at any time should you have additional questions for me or if there is anything I can do to assist you in helping him/her keep up with his/her treatment. I can be reached via call/text at (XXX)XXX-XXXX or email via ______@solace.health.\nThank you for all you do - your care for ______ is appreciated!' },
+  { cat:'Provider Communications', title:'Advocate Introduction (Role Clarification)', text:'*Letter of Authorization and Consent to Treatment forms attached*\nGood afternoon - I\'m a Care Advocate working with _______ to help him/her navigate Medicare and the healthcare system via Solace Health, a healthcare advocacy organization. My role as an advocate is primarily to assist with healthcare navigation and lowering administrative burden on the patient, rather than participating in treatment decisions or direct care. I welcome any questions or requests with regard to my role and how I can help ______ stay on track in his/her care - please feel free to reach me via return fax, by phone at (XXX)XXX-XXXX, or via email at ____________.\nThank you for being part of ______\'s care team!' },
+  { cat:'Provider Communications', title:'Post-Hospitalization Notification', text:'Good afternoon! I\'m reaching out to notify your office of _______\'s recent hospitalization for _________. ________ has been discharged home at this time, and I\'d like to connect with you on their behalf to determine whether you feel a follow-up appointment at your office would be appropriate or if you have any additional recommendations for their at-home care or recovery. Please feel free to reach me via return fax, phone call at (XXX)XXX-XXXX, or email at ______@solaceadvocates.com with any questions or concerns.\nThank you for being a valuable part of _____\'s care team!' },
+  { cat:'Provider Communications', title:'New Advocate Introduction to Care Team', text:'Good afternoon! I have recently taken over ______\'s case as their healthcare advocate, and wanted to reach out to introduce myself. My role is primarily to support ______ in accessing the care that s/he needs and keeping up with treatments and provider recommendations. I\'d welcome any questions or requests in regards to my role and how I can help ______ stay on track in their care - please feel free to reach me via return fax, by phone at (XXX)XXX-XXXX, or via email at __________@solaceadvocates.com.\nThank you for being part of _______\'s care team!' },
+  { cat:'Patient Communications', title:'Missed Intake — Reschedule Outreach', text:'Good morning _______! My name is _______, and I am your Advocate with Solace Health. It looks like I missed you for our intake appointment this morning and I wanted to get in touch to reschedule it with you!\nI called and left you a voicemail this morning, so feel free to reach me either by call, text or responding to this email. If you have any more questions about what Solace is or how patient advocacy can benefit you, I\'m happy to help answer those questions as well. I look forward to working with you!' },
+  { cat:'Patient Communications', title:'New Patient Introduction (Post-Physician Visit)', text:'Good morning ______! My name is _________, and I am a Care Advocate with Solace Health. I just received you as one of my patients - it looks like you had a telephone visit with Dr. _______ on _____ to set up services with Solace and I wanted to get in touch to schedule an intake appointment and learn how I can best assist you!' },
+  { cat:'Patient Communications', title:'New Patient Introduction (Voicemail Follow-Up)', text:'Good afternoon _______. My name is _____ and I am a Care Advocate with Solace Health. I just received you as one of my patients. I wanted to get in touch to schedule an intake appointment and learn how I can best assist you. Please call me back at xxx-xxx-xxxx. I will also send you an e-mail and you can e-mail me as well. Thank you and have a great day!' },
+  { cat:'Patient Communications', title:'Scope of Services Overview', text:'Some of the things I can help with are scheduling and keeping track of doctor\'s appointments, helping manage communication between providers, researching additional services and supports that could benefit you, and anything else we can think of that will help to improve your health and quality of life! This can even include things that aren\'t directly related to medical care, like making sure you have reliable access to nutritious food, a safe living environment, are able to afford utilities and healthcare, and more.' },
+  { cat:'Patient Communications', title:'Lapsed Contact — Services Paused', text:'Hi ______, this is ______, your Solace advocate. I wanted to reach out because I haven\'t been able to get in touch with you for a while - when this happens, Solace asks us to pause services until we hear from you again but I wanted to assure you that I\'ll still be available whenever you feel like you\'re ready!\nIf at any point you\'d like to get back in touch, you can just respond to this email, or shoot me a call or text message at my business line. I hope you\'re hanging in there, and I\'ll be here any time you\'d like some additional support!' },
+  { cat:'Patient Communications', title:'Vacation Coverage Notice', text:'Happy Memorial Day! I hope your summer is off to a warm and relaxed start - we may or may not have had the chance to discuss in a recent call, but I will be spending a few weeks this summer on vacation and wanted to send everyone I\'ve been working with a quick overview of the dates I\'ll be gone! During these weeks, I won\'t be able to schedule calls, but I\'ll be doing my best to check messages and voicemails while I\'m away, so feel free to shoot me a text or call if anything comes up and I will try to get back with you as soon as possible!\nHere\'s the dates that I\'ll be out of town:\n[Insert dates here]\nIf you have any other questions, please let me know and I\'m happy to chat more about how we can work together to make sure you feel supported all summer! I\'m thankful I get to work with you!' },
+];
+
+// ===================== SYNC =====================
+function setSyncStatus(s){
+  const dot=document.getElementById('sync-dot'),label=document.getElementById('sync-label');
+  dot.className='sync-dot '+s;
+  label.textContent=s==='synced'?'Synced':s==='syncing'?'Saving...':s==='error'?'Offline':'Connecting...';
 }
 
 // ===================== STATE =====================
-let state = { patients: [], logs: [], currentView: 'dashboard', currentPatientId: null, currentTab: 'all' };
+let state={patients:[],logs:[],resources:{},currentView:'dashboard',currentPatientId:null,currentTab:'all'};
 
 // ===================== FIRESTORE LISTENERS =====================
-onSnapshot(collection(db, 'patients'), snap => {
-  state.patients = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+onSnapshot(collection(db,'patients'),snap=>{
+  state.patients=snap.docs.map(d=>({id:d.id,...d.data()}));
   renderSidebar();
-  if (state.currentView === 'dashboard') renderDashboard();
-  else if (state.currentView === 'patient') renderPatient(state.currentPatientId);
+  if(state.currentView==='dashboard')renderDashboard();
+  else if(state.currentView==='patient')renderPatient(state.currentPatientId);
   setSyncStatus('synced');
-}, () => setSyncStatus('error'));
+},()=>setSyncStatus('error'));
 
-onSnapshot(query(collection(db, 'logs'), orderBy('date', 'desc')), snap => {
-  state.logs = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+onSnapshot(query(collection(db,'logs'),orderBy('date','desc')),snap=>{
+  state.logs=snap.docs.map(d=>({id:d.id,...d.data()}));
   renderSidebar();
-  if (state.currentView === 'dashboard') renderDashboard();
-  else if (state.currentView === 'patient') renderPatient(state.currentPatientId);
-  // Hide loading once data arrives
-  document.getElementById('loading-screen').style.display = 'none';
-  document.getElementById('app-shell').style.display = 'flex';
+  if(state.currentView==='dashboard')renderDashboard();
+  else if(state.currentView==='patient')renderPatient(state.currentPatientId);
+  document.getElementById('loading-screen').style.display='none';
+  document.getElementById('app-shell').style.display='flex';
   setSyncStatus('synced');
-}, () => {
-  document.getElementById('loading-screen').style.display = 'none';
-  document.getElementById('app-shell').style.display = 'flex';
+},()=>{
+  document.getElementById('loading-screen').style.display='none';
+  document.getElementById('app-shell').style.display='flex';
   setSyncStatus('error');
 });
 
-// ===================== FIREBASE WRITE HELPERS =====================
-async function fbSavePatient(p) {
-  setSyncStatus('syncing');
-  await setDoc(doc(db, 'patients', p.id), p);
-  setSyncStatus('synced');
-}
-async function fbDeletePatient(id) {
-  setSyncStatus('syncing');
-  await deleteDoc(doc(db, 'patients', id));
-  setSyncStatus('synced');
-}
-async function fbSaveLog(l) {
-  setSyncStatus('syncing');
-  await setDoc(doc(db, 'logs', l.id), l);
-  setSyncStatus('synced');
-}
-async function fbDeleteLog(id) {
-  setSyncStatus('syncing');
-  await deleteDoc(doc(db, 'logs', id));
-  setSyncStatus('synced');
-}
+// ===================== FIREBASE HELPERS =====================
+async function fbSave(col,id,data){setSyncStatus('syncing');await setDoc(doc(db,col,id),data);setSyncStatus('synced');}
+async function fbDel(col,id){setSyncStatus('syncing');await deleteDoc(doc(db,col,id));setSyncStatus('synced');}
 
 // ===================== HELPERS =====================
-function initials(name) { return name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2); }
-function formatDate(iso) { if(!iso)return''; return new Date(iso).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}); }
-function formatTime(iso) { if(!iso)return''; return new Date(iso).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}); }
-function formatDateTime(iso) { return `${formatDate(iso)} · ${formatTime(iso)}`; }
-function now() { return new Date().toISOString(); }
-function uid() { return Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
-function patientName(pid) { const p=state.patients.find(p=>p.id===pid); return p?`${p.firstName} ${p.lastName}`:''; }
-function getPatientLogs(pid) { return state.logs.filter(l=>l.patientId===pid).sort((a,b)=>new Date(b.date)-new Date(a.date)); }
-function getPendingDocs(pid) { return state.logs.filter(l=>l.patientId===pid&&l.type==='visit'&&!l.docSubmitted).length; }
-function getThisWeekCount(pid) { const w=new Date();w.setDate(w.getDate()-7); return state.logs.filter(l=>l.patientId===pid&&l.type==='visit'&&new Date(l.date)>w).length; }
-function avatarColor(id) {
-  const c=['#2C6E8A','#3DAA74','#9B6BBF','#C9622F','#4A90B8','#2E8B57','#7B5EA7','#D4752A'];
-  let h=0; for(let ch of id) h=(h*31+ch.charCodeAt(0))&0xffff; return c[h%c.length];
-}
-function getLastForNextVisit(pid) {
-  return state.logs.filter(l=>l.patientId===pid&&l.type==='visit'&&l.forNextVisit).sort((a,b)=>new Date(b.date)-new Date(a.date))[0]||null;
-}
+function initials(n){return n.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);}
+function formatDate(iso){if(!iso)return'';return new Date(iso).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}
+function formatTime(iso){if(!iso)return'';return new Date(iso).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}
+function formatDateTime(iso){return`${formatDate(iso)} · ${formatTime(iso)}`;}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
+function patientName(pid){const p=state.patients.find(p=>p.id===pid);return p?`${p.firstName} ${p.lastName}`:''; }
+function getPatientLogs(pid){return state.logs.filter(l=>l.patientId===pid).sort((a,b)=>new Date(b.date)-new Date(a.date));}
+function getPendingDocs(pid){return state.logs.filter(l=>l.patientId===pid&&l.type==='visit'&&!l.docSubmitted).length;}
+function getThisWeekCount(pid){const w=new Date();w.setDate(w.getDate()-7);return state.logs.filter(l=>l.patientId===pid&&l.type==='visit'&&new Date(l.date)>w).length;}
+function avatarColor(id){const c=['#2C6E8A','#3DAA74','#9B6BBF','#C9622F','#4A90B8','#2E8B57','#7B5EA7','#D4752A'];let h=0;for(let ch of id)h=(h*31+ch.charCodeAt(0))&0xffff;return c[h%c.length];}
+function getLastForNextVisit(pid){return state.logs.filter(l=>l.patientId===pid&&l.type==='visit'&&l.forNextVisit).sort((a,b)=>new Date(b.date)-new Date(a.date))[0]||null;}
 
 // ===================== VIEWS =====================
-window.showView = function(view, patientId) {
-  state.currentView = view;
-  if(patientId) state.currentPatientId = patientId;
+window.showView=function(view,patientId){
+  state.currentView=view;
+  if(patientId)state.currentPatientId=patientId;
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   document.querySelectorAll('.patient-item').forEach(b=>b.classList.remove('active'));
   if(view==='dashboard'){document.getElementById('nav-dashboard')?.classList.add('active');renderDashboard();}
+  else if(view==='phrases'){document.getElementById('nav-phrases')?.classList.add('active');renderPhrases();}
   else if(view==='compliance'){document.getElementById('nav-compliance')?.classList.add('active');renderCompliance();}
   else if(view==='patient'){document.querySelector(`.patient-item[data-id="${patientId}"]`)?.classList.add('active');renderPatient(patientId);}
   renderSidebar();
 }
 
 // ===================== SIDEBAR =====================
-function renderSidebar() {
-  const list = document.getElementById('patient-list');
-  if(!list) return;
+function renderSidebar(){
+  const list=document.getElementById('patient-list');if(!list)return;
   if(!state.patients.length){list.innerHTML=`<div style="padding:8px 10px;font-size:12px;color:var(--text3)">No patients yet</div>`;return;}
-  list.innerHTML = state.patients.map(p=>{
-    const pending=getPendingDocs(p.id),weekVisits=getThisWeekCount(p.id);
-    const active=state.currentView==='patient'&&state.currentPatientId===p.id;
-    return `<div class="patient-item ${active?'active':''}" data-id="${p.id}" onclick="showView('patient','${p.id}')">
+  list.innerHTML=state.patients.map(p=>{
+    const pending=getPendingDocs(p.id),wv=getThisWeekCount(p.id),active=state.currentView==='patient'&&state.currentPatientId===p.id;
+    return`<div class="patient-item ${active?'active':''}" data-id="${p.id}" onclick="showView('patient','${p.id}')">
       <div class="patient-avatar" style="background:${avatarColor(p.id)}">${initials(p.firstName+' '+p.lastName)}</div>
-      <div class="patient-info">
-        <div class="patient-name">${p.firstName} ${p.lastName}</div>
-        <div class="patient-meta">${weekVisits} visit${weekVisits!==1?'s':''} this week</div>
-      </div>
-      ${pending?`<div class="pending-dot" title="${pending} undocumented"></div>`:''}
+      <div class="patient-info"><div class="patient-name">${p.firstName} ${p.lastName}</div><div class="patient-meta">${wv} visit${wv!==1?'s':''} this week</div></div>
+      ${pending?`<div class="pending-dot"></div>`:''}
     </div>`;
   }).join('');
 }
 
 // ===================== DASHBOARD =====================
-function renderDashboard() {
-  const main=document.getElementById('main-content'); if(!main)return;
+function renderDashboard(){
+  const main=document.getElementById('main-content');if(!main)return;
   const weekAgo=new Date();weekAgo.setDate(weekAgo.getDate()-7);
-  const weekVisits=state.logs.filter(l=>l.type==='visit'&&new Date(l.date)>weekAgo).length;
-  const weekCalls=state.logs.filter(l=>l.type==='call'&&new Date(l.date)>weekAgo).length;
-  const pendingDocs=state.patients.reduce((s,p)=>s+getPendingDocs(p.id),0);
-  const recentLogs=[...state.logs].slice(0,8);
-  const days=['Mon','Tue','Wed','Thu','Fri'],dayCounts=[0,0,0,0,0];
-  state.logs.filter(l=>l.type==='visit'&&new Date(l.date)>weekAgo).forEach(l=>{const d=new Date(l.date).getDay();if(d>=1&&d<=5)dayCounts[d-1]++;});
-  const todayDow=new Date().getDay();
+  const wv=state.logs.filter(l=>l.type==='visit'&&new Date(l.date)>weekAgo).length;
+  const wc=state.logs.filter(l=>l.type==='call'&&new Date(l.date)>weekAgo).length;
+  const pd=state.patients.reduce((s,p)=>s+getPendingDocs(p.id),0);
+  const recent=[...state.logs].slice(0,8);
+  const days=['Mon','Tue','Wed','Thu','Fri'],dc=[0,0,0,0,0];
+  state.logs.filter(l=>l.type==='visit'&&new Date(l.date)>weekAgo).forEach(l=>{const d=new Date(l.date).getDay();if(d>=1&&d<=5)dc[d-1]++;});
+  const td=new Date().getDay();
   main.innerHTML=`
     <div class="page-header">
       <div><div class="page-title">Dashboard</div><div class="page-subtitle">Your activity at a glance</div></div>
       <button class="btn btn-primary" onclick="openLogModal()">＋ Log Entry</button>
     </div>
-    ${pendingDocs>0?`<div class="alert alert-warn">⚠️ <span><strong>${pendingDocs} visit${pendingDocs!==1?'s':''}</strong> missing documentation in Solace.</span></div>`:''}
+    ${pd>0?`<div class="alert alert-warn">⚠️ <span><strong>${pd} visit${pd!==1?'s':''}</strong> missing documentation in Solace.</span></div>`:''}
     <div class="stats-row">
       <div class="stat-card"><div class="stat-label">Patients</div><div class="stat-value">${state.patients.length}</div><div class="stat-sub">Active caseload</div></div>
-      <div class="stat-card"><div class="stat-label">Visits This Week</div><div class="stat-value">${weekVisits}</div><div class="stat-sub">Phone/video sessions</div></div>
-      <div class="stat-card"><div class="stat-label">Calls This Week</div><div class="stat-value">${weekCalls}</div><div class="stat-sub">Orgs, insurers, providers</div></div>
-      <div class="stat-card"><div class="stat-label">Pending Docs</div><div class="stat-value" style="color:${pendingDocs>0?'var(--warn)':'var(--accent2)'}">${pendingDocs}</div><div class="stat-sub">Unsubmitted visit notes</div></div>
+      <div class="stat-card"><div class="stat-label">Visits This Week</div><div class="stat-value">${wv}</div><div class="stat-sub">Phone/video sessions</div></div>
+      <div class="stat-card"><div class="stat-label">Calls This Week</div><div class="stat-value">${wc}</div><div class="stat-sub">Orgs, insurers, providers</div></div>
+      <div class="stat-card"><div class="stat-label">Pending Docs</div><div class="stat-value" style="color:${pd>0?'var(--warn)':'var(--accent2)'}">${pd}</div><div class="stat-sub">Unsubmitted notes</div></div>
     </div>
     <div class="grid-2">
-      <div class="card">
-        <div class="card-title">📅 Visits by Day (This Week)</div>
-        <div class="week-grid">${days.map((d,i)=>`<div class="day-cell ${(i+1)===todayDow?'today':''}"><div class="day-name">${d}</div><div class="day-count">${dayCounts[i]}</div></div>`).join('')}</div>
-      </div>
-      <div class="card">
-        <div class="card-title">⚡ Quick Log</div>
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          <button class="btn btn-secondary" style="justify-content:flex-start" onclick="openLogModal('visit')">📞 Log Telephone Visit</button>
-          <button class="btn btn-secondary" style="justify-content:flex-start" onclick="openLogModal('call')">📋 Log Outreach Call</button>
-          <button class="btn btn-secondary" style="justify-content:flex-start" onclick="openLogModal('task')">✓ Log Completed Task</button>
-          <button class="btn btn-secondary" style="justify-content:flex-start" onclick="openLogModal('transcript')">🎙️ Upload Transcript</button>
-        </div>
-      </div>
+      <div class="card"><div class="card-title">📅 Visits by Day (This Week)</div><div class="week-grid">${days.map((d,i)=>`<div class="day-cell ${(i+1)===td?'today':''}"><div class="day-name">${d}</div><div class="day-count">${dc[i]}</div></div>`).join('')}</div></div>
+      <div class="card"><div class="card-title">⚡ Quick Log</div><div style="display:flex;flex-direction:column;gap:8px;">
+        <button class="btn btn-secondary" style="justify-content:flex-start" onclick="openLogModal('visit')">📞 Log Telephone Visit</button>
+        <button class="btn btn-secondary" style="justify-content:flex-start" onclick="openLogModal('call')">📋 Log Outreach Call</button>
+        <button class="btn btn-secondary" style="justify-content:flex-start" onclick="openLogModal('task')">✓ Log Completed Task</button>
+        <button class="btn btn-secondary" style="justify-content:flex-start" onclick="openLogModal('transcript')">🎙️ Upload Transcript</button>
+      </div></div>
     </div>
-    <div class="card">
-      <div class="card-title">🕐 Recent Activity</div>
-      ${recentLogs.length===0?`<div class="empty-state"><div class="icon">📝</div><p>No entries yet.</p></div>`:recentLogs.map(l=>renderLogEntry(l,true)).join('')}
+    <div class="card"><div class="card-title">🕐 Recent Activity</div>
+      ${recent.length===0?`<div class="empty-state"><div class="icon">📝</div><p>No entries yet.</p></div>`:recent.map(l=>renderLogEntry(l,true)).join('')}
     </div>`;
 }
 
+// ===================== QUICK PHRASES VIEW =====================
+function renderPhrases(){
+  const main=document.getElementById('main-content');if(!main)return;
+  const cats=[...new Set(PHRASES.map(p=>p.cat))];
+  main.innerHTML=`
+    <div class="page-header">
+      <div><div class="page-title">Quick Phrases</div><div class="page-subtitle">Tap any phrase to copy it to your clipboard</div></div>
+    </div>
+    ${cats.map(cat=>`
+      <div class="card">
+        <div class="card-title">📁 ${cat}</div>
+        ${PHRASES.filter(p=>p.cat===cat).map((p,i)=>`
+          <div class="phrase-item" onclick="copyPhrase(this,'${escapeForAttr(p.text)}')">
+            <div class="phrase-title">${p.title}</div>
+            <div class="phrase-preview">${p.text.replace(/\n/g,' ').slice(0,120)}...</div>
+            <div class="phrase-copied" id="pc-${cat}-${i}">✓ Copied to clipboard!</div>
+          </div>`).join('')}
+      </div>`).join('')}`;
+}
+
+function escapeForAttr(str){return str.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,'\\n');}
+
+window.copyPhrase=function(el,text){
+  const decoded=text.replace(/\\n/g,'\n').replace(/\\'/g,"'").replace(/\\\\/g,'\\');
+  navigator.clipboard.writeText(decoded).then(()=>{
+    const copied=el.querySelector('.phrase-copied');
+    if(copied){copied.style.display='block';setTimeout(()=>{copied.style.display='none';},2000);}
+  }).catch(()=>{
+    const ta=document.createElement('textarea');ta.value=decoded;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
+    const copied=el.querySelector('.phrase-copied');
+    if(copied){copied.style.display='block';setTimeout(()=>{copied.style.display='none';},2000);}
+  });
+}
+
 // ===================== PATIENT VIEW =====================
-function renderPatient(pid) {
-  const p=state.patients.find(p=>p.id===pid); if(!p)return;
-  const main=document.getElementById('main-content'); if(!main)return;
-  const logs=getPatientLogs(pid),pending=getPendingDocs(pid),weekVisits=getThisWeekCount(pid);
+function renderPatient(pid){
+  const p=state.patients.find(p=>p.id===pid);if(!p)return;
+  const main=document.getElementById('main-content');if(!main)return;
+  const logs=getPatientLogs(pid),pending=getPendingDocs(pid),wv=getThisWeekCount(pid);
   const tab=state.currentTab||'all';
-  const filteredLogs=tab==='all'?logs:logs.filter(l=>l.type===tab);
+  const filtered=tab==='all'?logs:tab==='resources'?[]:logs.filter(l=>l.type===tab);
+  const patRes=state.resources[pid]||[];
+
   main.innerHTML=`
     <div class="page-header">
       <div style="display:flex;align-items:center;gap:14px">
         <div class="patient-avatar" style="width:44px;height:44px;font-size:16px;background:${avatarColor(pid)}">${initials(p.firstName+' '+p.lastName)}</div>
-        <div><div class="page-title">${p.firstName} ${p.lastName}</div><div class="page-subtitle">${p.insurance||'No insurance on file'} · ${weekVisits} visit${weekVisits!==1?'s':''} this week</div></div>
+        <div><div class="page-title">${p.firstName} ${p.lastName}</div><div class="page-subtitle">${p.insurance||'No insurance on file'} · ${wv} visit${wv!==1?'s':''} this week</div></div>
       </div>
       <div style="display:flex;gap:8px">
         <button class="btn btn-secondary btn-sm" onclick="openLogModal(null,'${pid}')">＋ Log Entry</button>
@@ -404,26 +455,150 @@ function renderPatient(pid) {
       <button class="tab-btn ${tab==='task'?'active':''}" onclick="setTab('task')">Tasks</button>
       <button class="tab-btn ${tab==='transcript'?'active':''}" onclick="setTab('transcript')">Transcripts</button>
       <button class="tab-btn ${tab==='message'?'active':''}" onclick="setTab('message')">Messages</button>
+      <button class="tab-btn ${tab==='resources'?'active':''}" onclick="setTab('resources')">📋 Resources</button>
     </div>
-    ${filteredLogs.length===0?`<div class="empty-state"><div class="icon">📂</div><p>No ${tab==='all'?'':tab+' '}entries yet.</p></div>`:filteredLogs.map(l=>renderLogEntry(l,false)).join('')}`;
+    ${tab==='resources' ? renderResourcesTab(pid,patRes) :
+      (filtered.length===0?`<div class="empty-state"><div class="icon">📂</div><p>No ${tab==='all'?'':tab+' '}entries yet.</p></div>`:filtered.map(l=>renderLogEntry(l,false)).join(''))}`;
 }
 
-window.setTab = function(tab){state.currentTab=tab;renderPatient(state.currentPatientId);}
+// ===================== RESOURCES TAB =====================
+function renderResourcesTab(pid,groups){
+  if(!groups.length){
+    return`<div class="empty-state"><div class="icon">📋</div><p>No resource trackers yet.</p></div>
+    <div style="text-align:center;margin-top:12px"><button class="btn btn-primary" onclick="openAddResourceGroup('${pid}')">＋ Add Resource Tracker</button></div>`;
+  }
+  return`<div>
+    <div style="display:flex;justify-content:flex-end;margin-bottom:16px">
+      <button class="btn btn-primary btn-sm" onclick="openAddResourceGroup('${pid}')">＋ New Tracker</button>
+    </div>
+    ${groups.map((g,gi)=>`
+      <div class="resource-group">
+        <div class="resource-group-header">
+          <div class="resource-group-title">📋 ${g.name}</div>
+          <button class="btn btn-secondary btn-sm" onclick="addResourceRow('${pid}',${gi})">＋ Add Row</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteResourceGroup('${pid}',${gi})">Delete Tracker</button>
+        </div>
+        <div style="overflow-x:auto">
+        <table class="resources-table">
+          <thead><tr>
+            <th style="min-width:130px">Organization</th>
+            <th style="min-width:130px">Point of Contact</th>
+            <th style="min-width:150px">Website / Phone</th>
+            <th style="min-width:90px">Eligible?</th>
+            <th style="min-width:220px">Notes</th>
+            <th style="min-width:80px">Logged?</th>
+            <th style="width:40px"></th>
+          </tr></thead>
+          <tbody>
+            ${(g.rows||[]).map((r,ri)=>`<tr>
+              <td><input value="${r.org||''}" onchange="updateResourceCell('${pid}',${gi},${ri},'org',this.value)" placeholder="Organization"></td>
+              <td><input value="${r.contact||''}" onchange="updateResourceCell('${pid}',${gi},${ri},'contact',this.value)" placeholder="Name / email found on site"></td>
+              <td><input value="${r.web||''}" onchange="updateResourceCell('${pid}',${gi},${ri},'web',this.value)" placeholder="URL or phone"></td>
+              <td>
+                <select onchange="updateResourceCell('${pid}',${gi},${ri},'eligible',this.value)" style="font-size:12px;font-family:var(--sans);border:none;background:transparent;outline:none;width:100%;cursor:pointer">
+                  <option value="" ${!r.eligible?'selected':''}>—</option>
+                  <option value="Yes" ${r.eligible==='Yes'?'selected':''}>✅ Yes</option>
+                  <option value="No" ${r.eligible==='No'?'selected':''}>❌ No</option>
+                  <option value="Pending" ${r.eligible==='Pending'?'selected':''}>⏳ Pending</option>
+                  <option value="Conditional" ${r.eligible==='Conditional'?'selected':''}>⚠️ Conditional</option>
+                </select>
+              </td>
+              <td><textarea rows="2" onchange="updateResourceCell('${pid}',${gi},${ri},'notes',this.value)" placeholder="Notes, conditions, dates..." style="min-height:40px">${r.notes||''}</textarea></td>
+              <td>
+                <select onchange="updateResourceCell('${pid}',${gi},${ri},'logged',this.value)" style="font-size:12px;font-family:var(--sans);border:none;background:transparent;outline:none;width:100%;cursor:pointer">
+                  <option value="" ${!r.logged?'selected':''}>—</option>
+                  <option value="Yes" ${r.logged==='Yes'?'selected':''}>✅ Yes</option>
+                  <option value="No" ${r.logged==='No'?'selected':''}>❌ No</option>
+                </select>
+              </td>
+              <td style="text-align:center"><button onclick="deleteResourceRow('${pid}',${gi},${ri})" style="background:none;border:none;cursor:pointer;color:var(--text3);font-size:16px;" title="Delete row">×</button></td>
+            </tr>`).join('')}
+          </tbody>
+        </table>
+        </div>
+        ${!(g.rows||[]).length?`<div style="text-align:center;padding:16px;color:var(--text3);font-size:12px">No rows yet — click "+ Add Row"</div>`:''}
+      </div>`).join('')}
+  </div>`;
+}
+
+// ===================== RESOURCE CRUD =====================
+window.openAddResourceGroup=function(pid){
+  state.currentPatientId=pid;
+  document.getElementById('rg-name').value='';
+  openModal('modal-resgroup');
+}
+
+window.saveResourceGroup=async function(){
+  const name=document.getElementById('rg-name')?.value?.trim();
+  if(!name){alert('Please enter a name for this tracker.');return;}
+  const pid=state.currentPatientId;
+  const existing=state.resources[pid]||[];
+  existing.push({name,rows:[]});
+  state.resources[pid]=existing;
+  await fbSave('resources',pid,{groups:existing});
+  closeModal('modal-resgroup');
+  setTab('resources');
+}
+
+window.addResourceRow=async function(pid,gi){
+  const groups=state.resources[pid]||[];
+  groups[gi].rows=groups[gi].rows||[];
+  groups[gi].rows.push({org:'',contact:'',web:'',eligible:'',notes:'',logged:''});
+  state.resources[pid]=groups;
+  await fbSave('resources',pid,{groups});
+  renderPatient(pid);
+}
+
+window.updateResourceCell=async function(pid,gi,ri,field,value){
+  const groups=state.resources[pid]||[];
+  if(groups[gi]&&groups[gi].rows[ri]){
+    groups[gi].rows[ri][field]=value;
+    state.resources[pid]=groups;
+    await fbSave('resources',pid,{groups});
+  }
+}
+
+window.deleteResourceRow=async function(pid,gi,ri){
+  if(!confirm('Delete this row?'))return;
+  const groups=state.resources[pid]||[];
+  groups[gi].rows.splice(ri,1);
+  state.resources[pid]=groups;
+  await fbSave('resources',pid,{groups});
+  renderPatient(pid);
+}
+
+window.deleteResourceGroup=async function(pid,gi){
+  if(!confirm('Delete this entire tracker?'))return;
+  const groups=state.resources[pid]||[];
+  groups.splice(gi,1);
+  state.resources[pid]=groups;
+  await fbSave('resources',pid,{groups});
+  renderPatient(pid);
+}
+
+// Load resources for each patient
+async function loadResources(pid){
+  try{
+    const snap=await getDoc(doc(db,'resources',pid));
+    if(snap.exists())state.resources[pid]=snap.data().groups||[];
+    else state.resources[pid]=[];
+  }catch(e){state.resources[pid]=[];}
+}
 
 // ===================== LOG ENTRY RENDERER =====================
-function renderLogEntry(l, showPatient) {
+function renderLogEntry(l,showPatient){
   const typeLabels={visit:'Visit',call:'Outreach Call',task:'Task',transcript:'Transcript',message:'Message'};
   const pName=showPatient?`<span style="font-size:11px;color:var(--text2);margin-right:8px">👤 ${patientName(l.patientId)}</span>`:'';
   let extra='';
-  if(l.org) extra+=`<span style="font-size:12px;color:var(--text2)">🏢 ${l.org}</span> `;
-  if(l.duration) extra+=`<span style="font-size:12px;color:var(--text2)">⏱ ${l.duration} min</span>`;
-  if(l.outcome) extra+=`<div style="font-size:12px;color:var(--text2);margin-top:4px">📌 ${l.outcome}</div>`;
-  if(l.docSubmitted) extra+=`<div><span style="font-size:11px;color:var(--accent2);font-weight:600">✓ Documented in Solace</span></div>`;
-  if(l.type==='visit'&&!l.docSubmitted) extra+=`<button class="btn btn-success btn-sm" style="margin-top:6px" onclick="markDocSubmitted('${l.id}')">✓ Mark as Documented</button>`;
-  if(l.transcript) extra+=`<details style="margin-top:8px"><summary style="font-size:12px;color:var(--accent);cursor:pointer;font-weight:500">View Transcript</summary><div class="transcript-box">${l.transcript}</div></details>`;
-  if(l.actionItems&&l.actionItems.length) extra+=`<div style="margin-top:8px;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px">Action Items:</div><ul class="action-items">${l.actionItems.map(a=>`<li>${a}</li>`).join('')}</ul>`;
-  if(l.forNextVisit) extra+=`<div style="margin-top:10px;background:#FEF6E4;border:1.5px solid #F0C87A;border-radius:7px;padding:10px 12px"><div style="font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#C98A20;margin-bottom:4px">📌 For Next Visit</div><div style="font-size:12px;color:#7A5010;white-space:pre-wrap;line-height:1.5">${l.forNextVisit}</div></div>`;
-  return `<div class="log-entry ${l.type}" id="log-${l.id}">
+  if(l.org)extra+=`<span style="font-size:12px;color:var(--text2)">🏢 ${l.org}</span> `;
+  if(l.duration)extra+=`<span style="font-size:12px;color:var(--text2)">⏱ ${l.duration} min</span>`;
+  if(l.outcome)extra+=`<div style="font-size:12px;color:var(--text2);margin-top:4px">📌 ${l.outcome}</div>`;
+  if(l.docSubmitted)extra+=`<div><span style="font-size:11px;color:var(--accent2);font-weight:600">✓ Documented in Solace</span></div>`;
+  if(l.type==='visit'&&!l.docSubmitted)extra+=`<button class="btn btn-success btn-sm" style="margin-top:6px" onclick="markDocSubmitted('${l.id}')">✓ Mark as Documented</button>`;
+  if(l.transcript)extra+=`<details style="margin-top:8px"><summary style="font-size:12px;color:var(--accent);cursor:pointer;font-weight:500">View Transcript</summary><div class="transcript-box">${l.transcript}</div></details>`;
+  if(l.actionItems&&l.actionItems.length)extra+=`<div style="margin-top:8px;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px">Action Items:</div><ul class="action-items">${l.actionItems.map(a=>`<li>${a}</li>`).join('')}</ul>`;
+  if(l.forNextVisit)extra+=`<div style="margin-top:10px;background:#FEF6E4;border:1.5px solid #F0C87A;border-radius:7px;padding:10px 12px"><div style="font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#C98A20;margin-bottom:4px">📌 For Next Visit</div><div style="font-size:12px;color:#7A5010;white-space:pre-wrap;line-height:1.5">${l.forNextVisit}</div></div>`;
+  return`<div class="log-entry ${l.type}">
     <div class="log-entry-header">
       <div style="display:flex;align-items:center;gap:8px">${pName}<span class="log-type-badge ${l.type}">${typeLabels[l.type]||l.type}</span></div>
       <span class="log-timestamp">${formatDateTime(l.date)}</span>
@@ -435,40 +610,40 @@ function renderLogEntry(l, showPatient) {
   </div>`;
 }
 
-// ===================== MARK DOCUMENTED =====================
-window.markDocSubmitted = async function(logId) {
-  const log=state.logs.find(l=>l.id===logId); if(!log)return;
-  log.docSubmitted=true;
-  await fbSaveLog(log);
+window.setTab=function(tab){
+  state.currentTab=tab;
+  if(tab==='resources'&&state.currentPatientId){
+    loadResources(state.currentPatientId).then(()=>renderPatient(state.currentPatientId));
+  } else {
+    renderPatient(state.currentPatientId);
+  }
+}
+
+window.markDocSubmitted=async function(logId){
+  const log=state.logs.find(l=>l.id===logId);if(!log)return;
+  log.docSubmitted=true;await fbSave('logs',log.id,log);
 }
 
 // ===================== LOG MODAL =====================
 let currentLogType=null,currentLogPatient=null,aiExtracted={};
 
-window.openLogModal = function(type, pid) {
+window.openLogModal=function(type,pid){
   currentLogType=type||null;
   currentLogPatient=pid||state.currentPatientId||(state.patients[0]?state.patients[0].id:null);
   if(!currentLogPatient){alert('Please add a patient first.');return;}
   document.getElementById('modal-log-title').textContent=type?`Log ${{visit:'Telephone Visit',call:'Outreach Call',task:'Task',transcript:'Transcript',message:'Message'}[type]||'Entry'}`:'Log Entry';
   const body=document.getElementById('modal-log-body');
-  const patientSelect=state.patients.map(p=>`<option value="${p.id}" ${p.id===currentLogPatient?'selected':''}>${p.firstName} ${p.lastName}</option>`).join('');
-  let typeSpecific='';
-  if(!type||type==='visit') typeSpecific=visitHTML();
-  else if(type==='call') typeSpecific=callHTML();
-  else if(type==='task') typeSpecific=`<div class="form-group"><label class="form-label">Task Details</label><textarea class="form-textarea" id="log-detail" placeholder="Describe the task completed..."></textarea></div>`;
-  else if(type==='transcript') typeSpecific=transcriptHTML();
-  else if(type==='message') typeSpecific=`<div class="form-group"><label class="form-label">Message Summary *</label><textarea class="form-textarea" id="log-detail" placeholder="Summarize the message exchange..."></textarea></div>`;
+  const pSel=state.patients.map(p=>`<option value="${p.id}" ${p.id===currentLogPatient?'selected':''}>${p.firstName} ${p.lastName}</option>`).join('');
+  let typeSpecific=type?getTypeHTML(type):getTypeHTML('visit');
   body.innerHTML=`
     ${!type?`<div class="form-group"><label class="form-label">Entry Type *</label><select class="form-select" id="log-type" onchange="changeLogType(this.value)"><option value="visit">Telephone Visit</option><option value="call">Outreach Call</option><option value="task">Completed Task</option><option value="transcript">Transcript</option><option value="message">Message</option></select></div>`:''}
-    <div class="form-group"><label class="form-label">Patient *</label><select class="form-select" id="log-patient">${patientSelect}</select></div>
+    <div class="form-group"><label class="form-label">Patient *</label><select class="form-select" id="log-patient">${pSel}</select></div>
     <div class="form-group"><label class="form-label">Date & Time</label><input class="form-input" id="log-date" type="datetime-local" value="${new Date().toISOString().slice(0,16)}"></div>
     <div class="form-group"><label class="form-label">Summary *</label><input class="form-input" id="log-summary" placeholder="Brief description..."></div>
     <div id="type-specific">${typeSpecific}</div>`;
-  if(!type) document.getElementById('type-specific').innerHTML=visitHTML();
   document.getElementById('modal-log-save').onclick=saveLog;
   openModal('modal-log');
-  // Show "for next visit" banner if it's a visit
-  if(type==='visit'||!type) {
+  if(type==='visit'||!type){
     const lastVisit=getLastForNextVisit(currentLogPatient);
     if(lastVisit){
       const banner=document.createElement('div');
@@ -479,46 +654,43 @@ window.openLogModal = function(type, pid) {
   }
 }
 
-function visitHTML(){return`<div class="form-group"><label class="form-label">Duration (minutes)</label><input class="form-input" id="log-duration" type="number" placeholder="30"></div><div class="form-group"><label class="form-label">Session Notes</label><textarea class="form-textarea" id="log-detail" placeholder="What was discussed..."></textarea></div><div class="form-group"><label class="form-label">📌 For Next Visit</label><textarea class="form-textarea" id="log-fornext" style="min-height:60px;border-color:#F0C87A;background:#FEFAF0" placeholder="Reminders, follow-ups, or questions for the next call..."></textarea><div style="font-size:11px;color:var(--text3);margin-top:4px">Automatically shown at the top of your next visit note.</div></div><div class="alert alert-info" style="font-size:11px">💡 Submit notes in Solace immediately after saving.</div>`;}
-function callHTML(){return`<div class="form-group"><label class="form-label">Organization Called</label><input class="form-input" id="log-org" placeholder="BlueCross, DME supplier..."></div><div class="form-group"><label class="form-label">Duration (minutes)</label><input class="form-input" id="log-duration" type="number" placeholder="15"></div><div class="form-group"><label class="form-label">Outcome</label><input class="form-input" id="log-outcome" placeholder="Approved, Pending, Voicemail..."></div><div class="form-group"><label class="form-label">Notes</label><textarea class="form-textarea" id="log-detail" placeholder="Details..."></textarea></div>`;}
-function transcriptHTML(){return`<div class="form-group"><label class="form-label">Paste Transcript from Plaud *</label><textarea class="form-textarea" id="log-transcript" style="min-height:140px;font-family:var(--mono);font-size:12px" placeholder="Paste your Plaud transcript here..."></textarea></div><div id="ai-result" class="hidden"></div><button class="btn btn-primary" type="button" onclick="runAIExtract()">🤖 Extract with AI</button><div style="font-size:11px;color:var(--text3);margin-top:6px">AI will auto-fill summary, org, outcome, duration, and action items.</div>`;}
-
-window.changeLogType = function(type){document.getElementById('type-specific').innerHTML={visit:visitHTML(),call:callHTML(),task:`<div class="form-group"><label class="form-label">Task Details</label><textarea class="form-textarea" id="log-detail" placeholder="Describe the task..."></textarea></div>`,transcript:transcriptHTML(),message:`<div class="form-group"><label class="form-label">Message Summary</label><textarea class="form-textarea" id="log-detail" placeholder="Summarize the exchange..."></textarea></div>`}[type]||'';currentLogType=type;}
-
-// ===================== AI EXTRACT =====================
-window.runAIExtract = async function() {
-  const transcript=document.getElementById('log-transcript')?.value?.trim();
-  if(!transcript){alert('Please paste a transcript first.');return;}
-  const resultDiv=document.getElementById('ai-result');
-  resultDiv.className='';
-  resultDiv.innerHTML=`<div class="ai-loading"><div class="spinner"></div> AI is reading the transcript...</div>`;
-  const patientId=document.getElementById('log-patient')?.value;
-  const patient=state.patients.find(p=>p.id===patientId);
-  const patientContext=patient?`The patient's name is ${patient.firstName} ${patient.lastName}.`:'';
-  const prompt=`You are an assistant helping a healthcare advocate log calls and visits. ${patientContext}\nAnalyze this transcript and extract:\n1. A brief summary (1-2 sentences)\n2. Organization or person called (or "Patient visit")\n3. Outcome/result\n4. Estimated duration in minutes\n5. 2-4 specific action items\n\nRespond ONLY with valid JSON, no markdown:\n{"summary":"...","org":"...","outcome":"...","duration":15,"actionItems":["...","..."]}\n\nTRANSCRIPT:\n${transcript.slice(0,3000)}`;
-  try {
-    const response=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:1000,messages:[{role:"user",content:prompt}]})});
-    const data=await response.json();
-    const text=data.content?.map(c=>c.text||'').join('')||'';
-    aiExtracted=JSON.parse(text.replace(/```json|```/g,'').trim());
-    const summaryEl=document.getElementById('log-summary');
-    if(summaryEl&&aiExtracted.summary) summaryEl.value=aiExtracted.summary;
-    resultDiv.innerHTML=`<div class="alert alert-success" style="flex-direction:column;align-items:flex-start;gap:6px"><strong>✓ AI extracted:</strong><div><strong>Summary:</strong> ${aiExtracted.summary}</div>${aiExtracted.org?`<div><strong>Org:</strong> ${aiExtracted.org}</div>`:''} ${aiExtracted.outcome?`<div><strong>Outcome:</strong> ${aiExtracted.outcome}</div>`:''} ${aiExtracted.duration?`<div><strong>Duration:</strong> ${aiExtracted.duration} min</div>`:''} ${aiExtracted.actionItems?.length?`<div><strong>Action Items:</strong>${aiExtracted.actionItems.map(a=>`<br>→ ${a}`).join('')}</div>`:''}</div>`;
-  } catch(e) {
-    resultDiv.innerHTML=`<div class="alert alert-warn">⚠️ AI extraction failed. Save manually. (${e.message})</div>`;
-    aiExtracted={};
-  }
+function getTypeHTML(type){
+  if(type==='visit')return`<div class="form-group"><label class="form-label">Duration (minutes)</label><input class="form-input" id="log-duration" type="number" placeholder="30"></div><div class="form-group"><label class="form-label">Session Notes</label><textarea class="form-textarea" id="log-detail" placeholder="What was discussed..."></textarea></div><div class="form-group"><label class="form-label">📌 For Next Visit</label><textarea class="form-textarea" id="log-fornext" style="min-height:60px;border-color:#F0C87A;background:#FEFAF0" placeholder="Reminders or follow-ups for next call..."></textarea><div style="font-size:11px;color:var(--text3);margin-top:4px">Automatically shown at the top of your next visit note.</div></div><div class="alert alert-info" style="font-size:11px">💡 Submit notes in Solace immediately after saving.</div>`;
+  if(type==='call')return`<div class="form-group"><label class="form-label">Organization Called</label><input class="form-input" id="log-org" placeholder="BlueCross, DME supplier..."></div><div class="form-group"><label class="form-label">Duration (minutes)</label><input class="form-input" id="log-duration" type="number" placeholder="15"></div><div class="form-group"><label class="form-label">Outcome</label><input class="form-input" id="log-outcome" placeholder="Approved, Pending, Voicemail..."></div><div class="form-group"><label class="form-label">Notes</label><textarea class="form-textarea" id="log-detail" placeholder="Details..."></textarea></div>`;
+  if(type==='transcript')return`<div class="form-group"><label class="form-label">Paste Transcript from Plaud *</label><textarea class="form-textarea" id="log-transcript" style="min-height:140px;font-family:var(--mono);font-size:12px" placeholder="Paste your Plaud transcript here..."></textarea></div><div id="ai-result" class="hidden"></div><button class="btn btn-primary" type="button" onclick="runAIExtract()">🤖 Extract with AI</button><div style="font-size:11px;color:var(--text3);margin-top:6px">AI will auto-fill summary, org, outcome, duration, and action items.</div>`;
+  if(type==='task')return`<div class="form-group"><label class="form-label">Task Details</label><textarea class="form-textarea" id="log-detail" placeholder="Describe the task..."></textarea></div>`;
+  if(type==='message')return`<div class="form-group"><label class="form-label">Message Summary</label><textarea class="form-textarea" id="log-detail" placeholder="Summarize the exchange..."></textarea></div>`;
+  return'';
 }
 
-// ===================== SAVE LOG =====================
-async function saveLog() {
-  const patientId=document.getElementById('log-patient')?.value;
+window.changeLogType=function(type){document.getElementById('type-specific').innerHTML=getTypeHTML(type);currentLogType=type;}
+
+window.runAIExtract=async function(){
+  const transcript=document.getElementById('log-transcript')?.value?.trim();
+  if(!transcript){alert('Please paste a transcript first.');return;}
+  const resultDiv=document.getElementById('ai-result');resultDiv.className='';
+  resultDiv.innerHTML=`<div class="ai-loading"><div class="spinner"></div> AI is reading the transcript...</div>`;
+  const pid=document.getElementById('log-patient')?.value;
+  const patient=state.patients.find(p=>p.id===pid);
+  const ctx=patient?`The patient's name is ${patient.firstName} ${patient.lastName}.`:'';
+  const prompt=`You are an assistant helping a healthcare advocate log calls and visits. ${ctx}\nAnalyze this transcript and extract:\n1. A brief summary (1-2 sentences)\n2. Organization or person called (or "Patient visit")\n3. Outcome/result\n4. Estimated duration in minutes\n5. 2-4 specific action items\n\nRespond ONLY with valid JSON, no markdown:\n{"summary":"...","org":"...","outcome":"...","duration":15,"actionItems":["...","..."]}\n\nTRANSCRIPT:\n${transcript.slice(0,3000)}`;
+  try{
+    const r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:1000,messages:[{role:"user",content:prompt}]})});
+    const data=await r.json();
+    const text=data.content?.map(c=>c.text||'').join('')||'';
+    aiExtracted=JSON.parse(text.replace(/```json|```/g,'').trim());
+    const sEl=document.getElementById('log-summary');if(sEl&&aiExtracted.summary)sEl.value=aiExtracted.summary;
+    resultDiv.innerHTML=`<div class="alert alert-success" style="flex-direction:column;align-items:flex-start;gap:6px"><strong>✓ AI extracted:</strong><div><strong>Summary:</strong> ${aiExtracted.summary}</div>${aiExtracted.org?`<div><strong>Org:</strong> ${aiExtracted.org}</div>`:''} ${aiExtracted.outcome?`<div><strong>Outcome:</strong> ${aiExtracted.outcome}</div>`:''} ${aiExtracted.duration?`<div><strong>Duration:</strong> ${aiExtracted.duration} min</div>`:''} ${aiExtracted.actionItems?.length?`<div><strong>Action Items:</strong>${aiExtracted.actionItems.map(a=>`<br>→ ${a}`).join('')}</div>`:''}</div>`;
+  }catch(e){resultDiv.innerHTML=`<div class="alert alert-warn">⚠️ AI extraction failed. (${e.message})</div>`;aiExtracted={};}
+}
+
+async function saveLog(){
+  const pid=document.getElementById('log-patient')?.value;
   const summary=document.getElementById('log-summary')?.value?.trim();
-  const date=document.getElementById('log-date')?.value||now();
+  const date=document.getElementById('log-date')?.value||new Date().toISOString();
   const type=currentLogType||document.getElementById('log-type')?.value||'visit';
-  if(!patientId||!summary){alert('Please fill in patient and summary.');return;}
-  const log={
-    id:uid(),patientId,type,date:new Date(date).toISOString(),summary,
+  if(!pid||!summary){alert('Please fill in patient and summary.');return;}
+  const log={id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),patientId:pid,type,date:new Date(date).toISOString(),summary,
     detail:document.getElementById('log-detail')?.value?.trim()||'',
     duration:document.getElementById('log-duration')?.value||aiExtracted.duration||'',
     org:document.getElementById('log-org')?.value?.trim()||aiExtracted.org||'',
@@ -526,53 +698,44 @@ async function saveLog() {
     transcript:document.getElementById('log-transcript')?.value?.trim()||'',
     actionItems:aiExtracted.actionItems||[],
     forNextVisit:document.getElementById('log-fornext')?.value?.trim()||'',
-    docSubmitted:false
-  };
-  aiExtracted={};
-  closeModal('modal-log');
-  await fbSaveLog(log);
+    docSubmitted:false};
+  aiExtracted={};closeModal('modal-log');
+  await fbSave('logs',log.id,log);
 }
 
 // ===================== PATIENT CRUD =====================
-window.openAddPatient = function(){openModal('modal-patient');}
-
-window.savePatient = async function() {
-  const firstName=document.getElementById('p-firstname')?.value?.trim();
-  const lastName=document.getElementById('p-lastname')?.value?.trim();
-  if(!firstName||!lastName){alert('Please enter a name or initials.');return;}
-  const p={id:uid(),firstName,lastName,insurance:document.getElementById('p-insurance')?.value?.trim()||'',notes:document.getElementById('p-notes')?.value?.trim()||''};
+window.openAddPatient=function(){openModal('modal-patient');}
+window.savePatient=async function(){
+  const fn=document.getElementById('p-firstname')?.value?.trim(),ln=document.getElementById('p-lastname')?.value?.trim();
+  if(!fn||!ln){alert('Please enter a name.');return;}
+  const p={id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),firstName:fn,lastName:ln,insurance:document.getElementById('p-insurance')?.value?.trim()||'',notes:document.getElementById('p-notes')?.value?.trim()||''};
   ['p-firstname','p-lastname','p-insurance','p-notes'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
-  closeModal('modal-patient');
-  await fbSavePatient(p);
+  closeModal('modal-patient');await fbSave('patients',p.id,p);
 }
-
-window.deletePatient = async function(pid) {
+window.deletePatient=async function(pid){
   if(!confirm('Remove this patient and all their logs?'))return;
   const logIds=state.logs.filter(l=>l.patientId===pid).map(l=>l.id);
-  await fbDeletePatient(pid);
-  await Promise.all(logIds.map(id=>fbDeleteLog(id)));
+  await fbDel('patients',pid);
+  await Promise.all(logIds.map(id=>fbDel('logs',id)));
+  try{await fbDel('resources',pid);}catch(e){}
   showView('dashboard');
 }
-
-window.deleteLog = async function(lid) {
-  if(!confirm('Delete this entry?'))return;
-  await fbDeleteLog(lid);
-}
+window.deleteLog=async function(lid){if(!confirm('Delete this entry?'))return;await fbDel('logs',lid);}
 
 // ===================== COMPLIANCE CHECKLIST =====================
-const COMPLIANCE_ITEMS=[
-  {id:'c1',category:'Documentation',text:'Submitted session notes in Solace immediately after every visit today'},
-  {id:'c2',category:'Documentation',text:'All required fields in Solace platform are fully completed (no blanks)'},
-  {id:'c3',category:'Documentation',text:'Visit type/service code is correct for every session logged'},
-  {id:'c4',category:'Documentation',text:'All between-visit activity (calls, records, follow-ups) is logged'},
-  {id:'c5',category:'Scheduling',text:'No new patient visits rescheduled without following exact Solace policy'},
-  {id:'c6',category:'Scheduling',text:'Any rescheduling decisions are documented with full reasoning'},
-  {id:'c7',category:'Time Logging',text:'Time logged reflects actual work — no rounded or padded entries'},
-  {id:'c8',category:'Time Logging',text:'Each logged time block has specific notes describing what was done'},
-  {id:'c9',category:'Time Logging',text:'Time entries vary naturally (not identical durations every session)'},
-  {id:'c10',category:'Communication',text:'All Solace support communications saved/screenshotted for your records'},
-  {id:'c11',category:'Communication',text:'Patient messages responded to in a timely manner'},
-  {id:'c12',category:'Records',text:'Personal backup records match what is submitted in Solace'},
+const CI=[
+  {id:'c1',cat:'Documentation',text:'Submitted session notes in Solace immediately after every visit today'},
+  {id:'c2',cat:'Documentation',text:'All required fields in Solace platform are fully completed (no blanks)'},
+  {id:'c3',cat:'Documentation',text:'Visit type/service code is correct for every session logged'},
+  {id:'c4',cat:'Documentation',text:'All between-visit activity (calls, records, follow-ups) is logged'},
+  {id:'c5',cat:'Scheduling',text:'No new patient visits rescheduled without following exact Solace policy'},
+  {id:'c6',cat:'Scheduling',text:'Any rescheduling decisions are documented with full reasoning'},
+  {id:'c7',cat:'Time Logging',text:'Time logged reflects actual work — no rounded or padded entries'},
+  {id:'c8',cat:'Time Logging',text:'Each logged time block has specific notes describing what was done'},
+  {id:'c9',cat:'Time Logging',text:'Time entries vary naturally (not identical durations every session)'},
+  {id:'c10',cat:'Communication',text:'All Solace support communications saved/screenshotted for your records'},
+  {id:'c11',cat:'Communication',text:'Patient messages responded to in a timely manner'},
+  {id:'c12',cat:'Records',text:'Personal backup records match what is submitted in Solace'},
 ];
 let checkedItems={};
 try{checkedItems=JSON.parse(localStorage.getItem('solace-checklist')||'{}');}catch(e){}
@@ -580,8 +743,8 @@ function saveChecklist(){localStorage.setItem('solace-checklist',JSON.stringify(
 
 function renderCompliance(){
   const main=document.getElementById('main-content');if(!main)return;
-  const cats=[...new Set(COMPLIANCE_ITEMS.map(i=>i.category))];
-  const total=COMPLIANCE_ITEMS.length,done=COMPLIANCE_ITEMS.filter(i=>checkedItems[i.id]).length,pct=Math.round(done/total*100);
+  const cats=[...new Set(CI.map(i=>i.cat))];
+  const total=CI.length,done=CI.filter(i=>checkedItems[i.id]).length,pct=Math.round(done/total*100);
   main.innerHTML=`
     <div class="page-header">
       <div><div class="page-title">Compliance Checklist</div><div class="page-subtitle">Daily habits to stay in good standing with Solace</div></div>
@@ -593,20 +756,18 @@ function renderCompliance(){
         <span style="font-family:var(--mono);font-weight:600;color:${pct===100?'var(--accent2)':'var(--accent)'}">${done}/${total}</span>
       </div>
       <div style="background:var(--surface2);border-radius:6px;height:8px;overflow:hidden"><div style="width:${pct}%;height:100%;background:${pct===100?'var(--accent2)':'var(--accent)'};border-radius:6px;transition:width .3s"></div></div>
-      ${pct===100?'<div class="alert alert-success" style="margin-top:12px;margin-bottom:0">✅ All items checked — you\'re in good standing today.</div>':''}
+      ${pct===100?'<div class="alert alert-success" style="margin-top:12px;margin-bottom:0">✅ All items checked!</div>':''}
     </div>
-    ${cats.map(cat=>`<div class="card"><div class="card-title">📁 ${cat}</div><ul class="checklist">${COMPLIANCE_ITEMS.filter(i=>i.category===cat).map(item=>`<li class="${checkedItems[item.id]?'done':''}"><input type="checkbox" id="${item.id}" ${checkedItems[item.id]?'checked':''} onchange="toggleCheck('${item.id}')"><label for="${item.id}">${item.text}</label></li>`).join('')}</ul></div>`).join('')}`;
+    ${cats.map(cat=>`<div class="card"><div class="card-title">📁 ${cat}</div><ul class="checklist">${CI.filter(i=>i.cat===cat).map(item=>`<li class="${checkedItems[item.id]?'done':''}"><input type="checkbox" id="${item.id}" ${checkedItems[item.id]?'checked':''} onchange="toggleCheck('${item.id}')"><label for="${item.id}">${item.text}</label></li>`).join('')}</ul></div>`).join('')}`;
 }
-
 window.toggleCheck=function(id){checkedItems[id]=!checkedItems[id];if(!checkedItems[id])delete checkedItems[id];saveChecklist();renderCompliance();}
-window.resetChecklist=function(){if(confirm('Reset all checklist items?')){checkedItems={};saveChecklist();renderCompliance();}}
+window.resetChecklist=function(){if(confirm('Reset all?')){checkedItems={};saveChecklist();renderCompliance();}}
 
 // ===================== MODAL UTILS =====================
 window.openModal=function(id){document.getElementById(id).classList.add('open');}
 window.closeModal=function(id){document.getElementById(id).classList.remove('open');}
 document.querySelectorAll('.modal-overlay').forEach(el=>{el.addEventListener('click',e=>{if(e.target===el)el.classList.remove('open');});});
 
-// Init
 showView('dashboard');
 </script>
 </body>
